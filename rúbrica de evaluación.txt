@@ -1,0 +1,19 @@
+Descripción General:
+
+El proyecto va a contener dos vistas para interactuar con el usuario:
+  1. La vista principal: que contiene una imagen de bienvenida a la aplicación y un botón de grabado de audio.
+  2. La vista de interacción: contiene los botones de interacción con el usuario, para agregar efectos de sonido.
+      a. Un botón para reproducir el audio previamente grabado.
+      b. 4 botones para agregar efectos de sonido al audio pregrabado (se escucha el efecto al accionar el botón).
+      c. Un botón de grabado del audio con el efecto de sonido.
+      d. Un fondo de aplicación interactivo, que cambia deacuerdo con el efecto del botón.
+
+
+Rúbrica:
+
+  Módulos para el manejo adecuado de las vistas que interactuan con el usuario final (Diseño e interacción) ---- 10%
+  Módulo de grabación de audio (Entrada y almacenamiento de audio) ---- 20%
+  4 Módulos de activación de efecto de sonido (Manipular la señal de audio para generar el efecto de sonido) ---- 40% (10% cáda módulo)
+  Módulo para el manejo del fondo de la aplicación (Cambio de fondo según el botón de acción) ---- 10%
+  Módulo para guardado del audio con el efecto de sonido (Entrada, manipulación y almacenamiento de audio) ---- 20%
+
