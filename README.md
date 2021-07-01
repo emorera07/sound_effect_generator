@@ -5,6 +5,7 @@ usuario.
 
 ## Como correr
 Abra el proyecto con Andorid Studio y corra la aplicacion en un dispositivo Android o un dispositivo Virtual (Emulador de Android).
-
-### Emmanuel Morera Salas.
+### Esquivel M. Brandon
+### brandon.esquivel@ucr.ac.cr
+### Morera S. Emmanuel
 ### emmanuel.morera@ucr.ac.cr
