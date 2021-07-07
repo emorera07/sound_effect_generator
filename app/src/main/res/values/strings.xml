@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">sound_effect_generator</string>
+    <string name="tittle">Sound Effects Generator</string>
+
 </resources>
