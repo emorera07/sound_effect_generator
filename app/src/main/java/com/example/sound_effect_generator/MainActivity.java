@@ -6,15 +6,10 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.media.AudioRecord;
-import android.media.MediaParser;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -35,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btn_record = findViewById(R.id.btn_rec);  // asignando boton rec
-        btn_play = findViewById(R.id.play);       // asignando boton play
+        btn_play = findViewById(R.id.btn_play);       // asignando boton play
 
         /*Se verifican permisos necesarios dentro del archivo manifest y se solicitan*/
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
@@ -47,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     // Metodo para grabar audio
     public void recorder(View view){
         if(grabacion==null){   //si no se esta grabando audio, se procede a inicializar y grabar
-            archivoSalida = Environment.getExternalStorageDirectory().getAbsolutePath()+"/Grabacion.mp3";  // se setea el path y nombre de archivo de salida
+            archivoSalida = getExternalFilesDir(null).getAbsolutePath()+"/Grabacion.mp3";  // se setea el path y nombre de archivo de salida
             grabacion = new MediaRecorder();                                    // se inicializa la instancia MediaRecorder para usar el MIC
             grabacion.setAudioSource(MediaRecorder.AudioSource.MIC);            // data fuente desde el microfono
             grabacion.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);    // Se setea el formato de salida 3gpp
