@@ -3,7 +3,7 @@ package com.example.sound_effect_generator;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
+import android.content.Intent;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
@@ -38,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // Metodo para llamar al activity que genera los efectos de sonido
+    public void SoundsEffectsGeneratorActivity(View view){
+       Intent NextActivity = new Intent(this, SoundsEffectsGeneratorActivity.class);
+       startActivity(NextActivity);
+    }
+
+
     /*Metodos comunes*/
     // Metodo para grabar audio
     public void recorder(View view){
@@ -56,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }catch (IOException e ){
             }
 
-            btn_record.setBackgroundResource(R.drawable.stop_rec);      // se cambia el fondo del boton para mostrar que esta grabando
+            btn_record.setBackgroundResource(R.drawable.rec);      // se cambia el fondo del boton para mostrar que esta grabando
             Toast.makeText(getApplicationContext(),"Grabando!",Toast.LENGTH_SHORT).show();          // toast para indicar que esta en grabacion
         } else if(grabacion !=null){                                            // si, si se esta grabando y se apreto el boton, entonces se detiene la grabacion
             grabacion.stop();                                                   // se detiene la instancia dle recorder
@@ -69,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     /*Metodo para reproducir el archivo grabado*/
     public void reproducir(View view) {
+
         if (archivoSalida == null) {
             Toast.makeText(getApplicationContext(), "No se ha grabado nada aun!", Toast.LENGTH_SHORT).show();       // se muestra toast para indicar que esta reproduciendo
         } else {

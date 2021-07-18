@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">sound_effect_generator</string>
-    <string name="tittle">Sound Effects Generator</string>
-
+    <string name="tittle">Sound Effect Generator</string>
+    <string name="NextActivityBottom">Agregar Efectos de Sonido</string>
+    <string name="BeforeActivityBottom">Grabar un nuevo sonido</string>
+    <string name="btn_reverb">Reverb effect</string>
+    <string name="btn_echo">Echo effect</string>
+    <string name="btn_whale">Whale effect</string>
+    <string name="btn_chipmunk">Chipmunk effect</string>
 </resources>
