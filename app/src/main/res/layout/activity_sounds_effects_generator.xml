@@ -11,6 +11,7 @@
         android:id="@+id/button2"
         android:layout_width="128dp"
         android:layout_height="60dp"
+        android:onClick="reverb_effect"
         android:text="@string/btn_reverb"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,6 +36,7 @@
         android:id="@+id/button4"
         android:layout_width="128dp"
         android:layout_height="60dp"
+        android:onClick="playBallena"
         android:text="@string/btn_whale"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,6 +49,7 @@
         android:id="@+id/button5"
         android:layout_width="128dp"
         android:layout_height="60dp"
+        android:onClick="playArdilla"
         android:text="@string/btn_chipmunk"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,4 +87,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
+
+    <Button
+        android:id="@+id/originalRec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="49dp"
+        android:onClick="playOriginal"
+        android:text="Originar Rec"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
