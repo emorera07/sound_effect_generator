@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -39,12 +40,10 @@ public class SoundsEffectsGeneratorActivity extends AppCompatActivity {
     /*Para el effect*/
     AudioEffect mReverb;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sounds_effects_generator);
-
 
     /*instanciando el audioPool*/
     sp = new SoundPool(5, AudioManager.STREAM_MUSIC,1);
@@ -91,21 +90,17 @@ public class SoundsEffectsGeneratorActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No se ha grabado nada aun!", Toast.LENGTH_SHORT).show();       // se muestra toast para indicar que esta reproduciendo
             } else {
                 MediaPlayer mediaPlayer = new MediaPlayer();                // instancia del mediaplayer
-                mediaPlayer.setAudioSessionId(1212);
                 PresetReverb presetReverb = new PresetReverb(1, mediaPlayer.getAudioSessionId());
-                presetReverb.setPreset(presetReverb.PRESET_SMALLROOM);
+                presetReverb.setPreset(PresetReverb.PRESET_SMALLROOM);
                 presetReverb.setEnabled(true);
 
-                //mediaPlayer.setAuxEffectSendLevel(1.0f);
                 mReverb = presetReverb;
-
                 try {
                     mediaPlayer.setDataSource(archivoSalida);               // se busca el archivo a reproducir usando la ruta o path
-                    mediaPlayer.attachAuxEffect(presetReverb.getId());
+                    mediaPlayer.attachAuxEffect(mReverb.getId());
                     mediaPlayer.setAuxEffectSendLevel(1.0f);
                     mediaPlayer.prepare();
-                                                      // se prepara
-                } catch (IOException e) {
+                 } catch (IOException e) {
                     Toast.makeText(getApplicationContext(), "No se encontró el archivo Audio Reverb!", Toast.LENGTH_SHORT).show();       // se muestra toast para indicar que esta reproduciendo
                 }
                 mediaPlayer.start();                                        // se inicia la reproduccion
@@ -121,17 +116,15 @@ public class SoundsEffectsGeneratorActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "No se ha grabado nada aun!", Toast.LENGTH_SHORT).show();       // se muestra toast para indicar que esta reproduciendo
         } else {
             MediaPlayer mediaPlayer = new MediaPlayer();                // instancia del mediaplayer
-            mediaPlayer.setAudioSessionId(1212);
             PresetReverb presetReverb = new PresetReverb(1, mediaPlayer.getAudioSessionId());
-            presetReverb.setPreset(presetReverb.PRESET_LARGEHALL);
+            presetReverb.setPreset(PresetReverb.PRESET_LARGEHALL);
             presetReverb.setEnabled(true);
 
-            //mediaPlayer.setAuxEffectSendLevel(1.0f);
             mReverb = presetReverb;
 
             try {
                 mediaPlayer.setDataSource(archivoSalida);               // se busca el archivo a reproducir usando la ruta o path
-                mediaPlayer.attachAuxEffect(presetReverb.getId());
+                mediaPlayer.attachAuxEffect(mReverb.getId());
                 mediaPlayer.setAuxEffectSendLevel(1.0f);
                 mediaPlayer.prepare();
 

@@ -24,6 +24,7 @@
         android:id="@+id/button3"
         android:layout_width="128dp"
         android:layout_height="60dp"
+        android:onClick="Eco_effect"
         android:text="@string/btn_echo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

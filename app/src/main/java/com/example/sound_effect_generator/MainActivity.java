@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             btn_record.setBackgroundResource(R.drawable.rec);      // se cambia el fondo del boton para mostrar que esta grabando
-            Toast.makeText(getApplicationContext(),archivoSalida+"Grabando!",Toast.LENGTH_SHORT).show();          // toast para indicar que esta en grabacion
+            Toast.makeText(getApplicationContext(),archivoSalida+" Grabando! ",Toast.LENGTH_SHORT).show();          // toast para indicar que esta en grabacion
         } else if(grabacion !=null){                                            // si, si se esta grabando y se apreto el boton, entonces se detiene la grabacion
             grabacion.stop();                                                   // se detiene la instancia dle recorder
             grabacion.release();                                                // y se libera su memoria usada de instancia
